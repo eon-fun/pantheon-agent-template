@@ -59,7 +59,10 @@ services:
         condition: service_healthy
 
   ray-head:
-    image: base-agent
+    image: custom-agent
+    build:
+      context: .
+      dockerfile: Dockerfile
     shm_size: '4gb'
     entrypoint: []
     command: >
@@ -78,9 +81,10 @@ services:
       start_period: 60s
 
   ray-worker:
-    image: base-agent
+    image: custom-agent
     shm_size: '4gb'
     command: ${AGENT_TO_RUN}
+    entrypoint: ["./docker-entrypoint.sh"]
     ports:
       - "8000:8000"
     depends_on:
