@@ -27,7 +27,7 @@ pytest = "^8.3.4"
 
 [[tool.poetry.source]]
 name = "pantheon"
-url = "https://pantheon-688567299207.d.codeartifact.eu-west-1.amazonaws.com/pypi/pantheon/simple/"
+url = "https://packages.pypi.pntheon.ai/simple/"
 priority = "supplemental"
 
 
