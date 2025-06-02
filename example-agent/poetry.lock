@@ -397,19 +397,19 @@ files = [
 
 [[package]]
 name = "example-package"
-version = "0.0.3"
+version = "0.0.4"
 description = "This is an example package."
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "example_package-0.0.3-py3-none-any.whl", hash = "sha256:bd5a0acf8a2a189ea424c06449c1776abb882e775b317bbb066d12da93a18c0e"},
-    {file = "example_package-0.0.3.tar.gz", hash = "sha256:628e62334dbad0d0f0b749f1454ed7f16c9e923e4aa963e0c3d78aa591eac8ac"},
+    {file = "example_package-0.0.4-py3-none-any.whl", hash = "sha256:b8049f3324bbb046037c35d1bc45638f9ba143ced020c5c0e2d12d50e871dec4"},
+    {file = "example_package-0.0.4.tar.gz", hash = "sha256:d066159eed73ddd77ae3331e27d3484bd9e0f5b94cb1ea1aae1810e7272ccd72"},
 ]
 
 [package.source]
 type = "legacy"
-url = "https://pantheon-688567299207.d.codeartifact.eu-west-1.amazonaws.com/pypi/pantheon/simple"
+url = "https://packages.pypi.pntheon.ai/simple"
 reference = "pantheon"
 
 [[package]]
@@ -2264,4 +2264,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9"
-content-hash = "ae03072cd452ceb49f3dcfca8eebeae7b318c573121563f5bed243981ebf2a8e"
+content-hash = "0b0b9727a96d84b736a11fb09ba203e2156b0ee6941a25c987635a6e465667d7"
