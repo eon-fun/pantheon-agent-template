@@ -1,5 +1,5 @@
 from contextlib import asynccontextmanager
-from typing import Any
+from typing import Any, Optional
 
 from base_agent.bootstrap import bootstrap_main
 from base_agent.config import get_agent_config
@@ -22,7 +22,9 @@ app = FastAPI(lifespan=lifespan)
 
 @serve.deployment
 class SubAgent:
-    """This agent is a part of ray serve application, but it is not exposed for communication with the outside agents.
+    """Ray serve deployment agent.
+
+    This agent is a part of ray serve application, but it is not exposed for communication with the outside agents.
     We can use it to execute some tools or a custom logic to enable ray scaling capabilities.
     The `__call__` method in this class suggests that it could also just be a function instead.
     """
@@ -35,7 +37,7 @@ class SubAgent:
 @serve.ingress(app)
 class ExampleAgent(BaseAgent):
     @app.post("/{goal}")
-    async def handle(self, goal: str, plan: Workflow | None = None, context: Any = None):
+    async def handle(self, goal: str, plan: Optional[Workflow] = None, context: Any = None):
         return await super().handle(goal, plan, context)
 
 
