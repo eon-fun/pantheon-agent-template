@@ -22,7 +22,9 @@ app = FastAPI(lifespan=lifespan)
 
 @serve.deployment
 class SubAgent:
-    """This agent is a part of ray serve application, but it is not exposed for communication with the outside agents.
+    """Ray serve deployment agent.
+
+    This agent is a part of ray serve application, but it is not exposed for communication with the outside agents.
     We can use it to execute some tools or a custom logic to enable ray scaling capabilities.
     The `__call__` method in this class suggests that it could also just be a function instead.
     """
