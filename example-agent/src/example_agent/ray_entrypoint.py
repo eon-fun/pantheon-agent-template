@@ -1,5 +1,5 @@
 from contextlib import asynccontextmanager
-from typing import Any
+from typing import Any, Optional
 
 from base_agent.bootstrap import bootstrap_main
 from base_agent.config import get_agent_config
@@ -37,7 +37,7 @@ class SubAgent:
 @serve.ingress(app)
 class ExampleAgent(BaseAgent):
     @app.post("/{goal}")
-    async def handle(self, goal: str, plan: Workflow | None = None, context: Any = None):
+    async def handle(self, goal: str, plan: Optional[Workflow] = None, context: Any = None):
         return await super().handle(goal, plan, context)
 
 
