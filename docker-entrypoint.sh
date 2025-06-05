@@ -11,11 +11,6 @@ fi
 if [[ "$AGENT_SPEC" == /serve_app/* ]]; then
   echo "Используем локальную версию агента..."
   cd /serve_app
-  # Install local py-libp2p first
-  if [ -d "/serve_app/py-libp2p" ]; then
-    echo "Устанавливаю локальную версию py-libp2p..."
-    pip install -e /serve_app/py-libp2p
-  fi
   pip install -e .
 else
   echo "Устанавливаю $AGENT_SPEC..."

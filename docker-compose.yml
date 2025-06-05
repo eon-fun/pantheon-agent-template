@@ -2,7 +2,7 @@ services:
   redis:
     image: redislabs/redisearch:latest
     ports:
-      - "6380:6379"
+      - "6379:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -107,8 +107,6 @@ services:
       REGISTRY_RELAY_MULTIADDR_TEMPLATE: ${REGISTRY_RELAY_MULTIADDR_TEMPLATE}
       AGENT_P2P_LISTEN_ADDR: ${AGENT_P2P_LISTEN_ADDR}
       AGENT_NAME: ${AGENT_NAME}
-    # volumes:
-    #   - ./py-libp2p:/serve_app/py-libp2p:ro
 
 volumes:
   pgdata:

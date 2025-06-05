@@ -6,11 +6,10 @@ This is a template repository for creating Pantheon agents with built-in code qu
 
 ```
 pantheon-agent-template/
-├── example-agent/           # Example agent implementation
-│   ├── src/                # Agent source code
-│   ├── pyproject.toml      # Poetry configuration and tool settings
-│   ├── .pre-commit-config.yaml  # Pre-commit hooks configuration
-│   └── README.md           # Agent-specific documentation
+├── src/                # Agent source code
+├── pyproject.toml      # Poetry configuration and tool settings
+├── .pre-commit-config.yaml  # Pre-commit hooks configuration
+├── README.md           # Agent-specific documentation
 ├── .github/workflows/      # GitHub Actions CI/CD workflows
 ├── docs/                   # Documentation
 └── docker-compose.yml      # Docker setup
@@ -19,12 +18,6 @@ pantheon-agent-template/
 ## Quick Start
 
 ### 1. Setup Agent Development Environment
-
-Navigate to the agent directory:
-
-```bash
-cd example-agent
-```
 
 Install dependencies:
 
@@ -71,7 +64,6 @@ Each agent in this repository uses pre-commit hooks for code quality:
 1. **Installation**:
 
    ```bash
-   cd example-agent  # or your agent directory
    poetry install --with dev
    poetry run pre-commit install
    ```
@@ -96,9 +88,9 @@ Each agent in this repository uses pre-commit hooks for code quality:
 
 ### Configuration Files
 
-- **Pre-commit**: `example-agent/.pre-commit-config.yaml`
-- **Ruff**: `example-agent/pyproject.toml` (sections `[tool.ruff]` and `[tool.ruff.lint]`)
-- **MyPy**: `example-agent/pyproject.toml` (section `[tool.mypy]`)
+- **Pre-commit**: `.pre-commit-config.yaml`
+- **Ruff**: `pyproject.toml` (sections `[tool.ruff]` and `[tool.ruff.lint]`)
+- **MyPy**: `pyproject.toml` (section `[tool.mypy]`)
 
 ## CI/CD Pipeline
 
@@ -114,7 +106,7 @@ The repository includes GitHub Actions workflows that:
 Build and run the agent using Docker:
 
 ```bash
-docker-compose up --build
+./start_agent.sh
 ```
 
 ## Contributing
