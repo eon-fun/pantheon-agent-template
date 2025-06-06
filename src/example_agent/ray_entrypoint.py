@@ -1,11 +1,11 @@
 from contextlib import asynccontextmanager
 from typing import Any, Optional
 
-from base_agent.bootstrap import bootstrap_main
-from base_agent.config import get_agent_config
-from base_agent.models import Workflow
-from base_agent.ray_entrypoint import BaseAgent
 from fastapi import FastAPI
+from pantheon_sdk.agents.bootstrap import bootstrap_main
+from pantheon_sdk.agents.config import get_agent_config
+from pantheon_sdk.agents.models import Workflow
+from pantheon_sdk.agents.ray_entrypoint import BaseAgent
 from ray import serve
 from ray.serve.deployment import Application
 
@@ -33,8 +33,6 @@ class SubAgent:
         pass
 
 
-@serve.deployment
-@serve.ingress(app)
 class ExampleAgent(BaseAgent):
     @app.post("/{goal}")
     async def handle(self, goal: str, plan: Optional[Workflow] = None, context: Any = None):

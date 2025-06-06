@@ -6,11 +6,11 @@ authors = [
     {name = "Your Name",email = "you@example.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.10,<4"
+requires-python = ">=3.10,<3.14"
 
 
 [project.entry-points."agent.entrypoint"]
-target = "example_agent.ray_entrypoint:app"
+target = "example_agent.ray_entrypoint:get_example_agent"
 
 
 [tool.poetry]
@@ -30,9 +30,13 @@ name = "pantheon"
 url = "https://packages.pypi.pntheon.ai/simple/"
 priority = "supplemental"
 
+[[tool.poetry.source]]
+name = "pantheon-agents"
+url = "https://agents.pypi.pntheon.ai/simple/"
+priority = "supplemental"
 
 [tool.poetry.dependencies]
-fastapi  =  { version  =  "^0.115.8" }
+pantheon-sdk-agents = {source = "pantheon-agents"}
 example-package = {source = "pantheon"}
 
 [build-system]

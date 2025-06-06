@@ -1,0 +1,7 @@
+**/*
+
+!src/
+!pyproject.toml
+!entrypoint.py
+!docker-entrypoint.sh
+!README.md

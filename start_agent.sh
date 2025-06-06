@@ -11,7 +11,7 @@ echo "To stop: docker-compose down"
 
 
 # install agent locally
-poetry install -E .
+pip install -e .
 
 # start agent
 serve run entrypoint:app
