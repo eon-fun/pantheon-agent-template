@@ -4,17 +4,11 @@ on:
   push:
     branches-ignore:
       - "main"
-      - "staging"
-      - "hotfix/**"
-      - "release/**"
     paths:
-      - "example-agent/**"
-      - ".github/workflows/tests-example-agent.yml"
+      - "src/**"
+      - "pyproject.toml"
   pull_request:
-    paths:
-      - "example-agent/**"
-      - ".github/workflows/tests-example-agent.yml"
-    types: [opened, synchronize, reopened]
+    types: [opened, reopened]
 
 jobs:
   pre-commit:
@@ -23,7 +17,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./example-agent
+        working-directory: .
 
     steps:
       - name: Checkout repository
@@ -58,7 +52,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./example-agent
+        working-directory: .
 
     steps:
       - name: Checkout repository

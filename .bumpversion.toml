@@ -1,6 +1,6 @@
 [tool.bumpversion]
 current_version = "0.0.1"
-message = "Bump version of agent: {current_version} → {new_version}"
+message = "Bump version of example-agent: {current_version} → {new_version}"
 commit = false
 tag = false
 tag_name = "v{new_version}"
