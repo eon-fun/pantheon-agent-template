@@ -1,20 +1,18 @@
 # This file defines code owners for the PanthEON Agent Template repository
 # Code owners are automatically requested for review when someone opens a PR
 
-* @golemxiv @k1llzz @polkadot21
+* @GolemXlV @k1llzz @polkadot21
 
-/docs/ @polkadot21 @k1llzz
-*.md @polkadot21 @k1llzz
-/README.md @polkadot21 @k1llzz
+/docs/ @GolemXlV @polkadot21 @k1llzz
+*.md @GolemXlV @polkadot21 @k1llzz
+/README.md @GolemXlV @polkadot21 @k1llzz
 
-/Dockerfile @golemxiv @drobotukhin
-/docker-compose.yml @golemxiv @drobotukhin
-/docker-entrypoint.sh @golemxiv @drobotukhin
-/.github/ @golemxiv @drobotukhin
+/pyproject.toml @GolemXlV @mrvladd-d
+/.github/ @GolemXlV @mrvladd-d
 
-/src/ @golemxiv @k1llzz
-/example-agent/ @golemxiv @k1llzz
+/src/ @GolemXlV @mrvladd-d @k1llzz
+/tests/ @GolemXlV @k1llzz
 
-/.github/workflows/ @golemxiv @drobotukhin
+/.github/workflows/ @GolemXlV @mrvladd-d
 
-/LICENSE @golemxiv @k1llzz @polkadot21 @drobotukhin
+/LICENSE @GolemXlV @k1llzz @polkadot21 @mrvladd-d
