@@ -8,6 +8,7 @@ This is a template repository for creating Pantheon agents with built-in code qu
 pantheon-agent-template/
 ├── src/                # Agent source code
 ├── pyproject.toml      # Poetry configuration and tool settings
+├── Makefile            # Project tasks and shortcuts
 ├── .pre-commit-config.yaml  # Pre-commit hooks configuration
 ├── README.md           # Agent-specific documentation
 ├── .github/workflows/      # GitHub Actions CI/CD workflows
@@ -27,13 +28,7 @@ pantheon-agent-template/
 Install dependencies:
 
 ```bash
-poetry install --with dev
-```
-
-Install pre-commit hooks:
-
-```bash
-poetry run pre-commit install
+make install
 ```
 ### 2. Code Quality Tools
 
@@ -68,14 +63,13 @@ Each agent in this repository uses pre-commit hooks for code quality:
 1. **Installation**:
 
    ```bash
-   poetry install --with dev
-   poetry run pre-commit install
+   make install
    ```
 2. **Usage**:
 
    ```bash
    # Manual run
-   poetry run pre-commit run --all-files
+   make precommit
 
    # Automatic on commit
    git commit -m "Your changes"
@@ -105,6 +99,7 @@ The repository includes GitHub Actions workflows that:
 - Ensure code quality standards are met
 - Block merges if any checks fail
 - Cache dependencies for faster builds
+
 ## Docker Support
 
 Build and run the agent using Docker:
@@ -120,8 +115,7 @@ To create a new agent from this template:
 1. Copy the `example-agent` directory
 2. Rename it to your agent name
 3. Update `pyproject.toml` with your agent details
-4. Install dependencies: `poetry install --with dev`
-5. Install pre-commit hooks: `poetry run pre-commit install`
+4. Install dependencies and precommits: `make install`
 6. Start developing!
 
 ## Support
